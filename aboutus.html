@@ -1,0 +1,841 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Requi#08b427 meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+        integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="index.css">
+
+
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-MD5gH6RV5F3eXQ3WoGnJsG7pEv/Muj5zvq6+5aZz5g2lLDRmabYraA58SHivlG3M8NiR/Qf5b+b9VcV/2c9Rhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>Bicicle Store</title>
+    <style>
+        .media {
+            background-position: center;
+            background-size: cover;
+            height: 100%;
+            position: absolute;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        figure {
+            height: 370px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        figure a {
+            height: 100%;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            z-index: 3;
+        }
+
+        figure:hover .media {
+            transform: scale(1.25);
+        }
+
+        figcaption {
+            color: #252830;
+            height: calc(100% - 30px);
+            margin: 15px;
+            left: 0;
+            position: absolute;
+            top: 0;
+            width: 250px;
+        }
+
+        .bodyhistory {
+            background-color: white;
+            bottom: 0;
+            padding: 15px;
+            position: absolute;
+            width: 100%;
+        }
+
+        svg {
+            height: inherit;
+            width: 100%;
+        }
+
+        svg text {
+            text-anchor: middle;
+        }
+
+        svg #alpha {
+            fill: white;
+        }
+
+        svg .title {
+            font-size: 28px;
+            font-family: "Montserrat";
+            letter-spacing: 5px;
+        }
+
+        svg #base {
+            fill: white;
+            -webkit-mask: url(#mask);
+            mask: url(#mask);
+        }
+
+
+        /* article section css */
+
+
+        .blog-card {
+            display: flex;
+            flex-direction: column;
+            margin: 1rem auto;
+            box-shadow: 0 3px 7px -1px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.6%;
+            background: #fff;
+            line-height: 1.4;
+            font-family: sans-serif;
+            border-radius: 5px;
+            overflow: hidden;
+            z-index: 0;
+        }
+
+        .blog-card a {
+            color: inherit;
+        }
+
+        .blog-card a:hover {
+            color: #5ad67d;
+        }
+
+        .blog-card:hover .photo {
+            transform: scale(1.3) rotate(3deg);
+        }
+
+        .blog-card .meta {
+            position: relative;
+            z-index: 0;
+            height: 200px;
+        }
+
+        .blog-card .photo {
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-size: cover;
+            background-position: center;
+            transition: transform 0.2s;
+        }
+
+        .blog-card .details,
+        .blog-card .details ul {
+            margin: auto;
+            padding: 0;
+            list-style: none;
+        }
+
+        .blog-card .details {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -100%;
+            margin: auto;
+            transition: left 0.2s;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            padding: 10px;
+            width: 100%;
+            font-size: 0.9rem;
+        }
+
+        .blog-card .details a {
+            -webkit-text-decoration: dotted underline;
+            text-decoration: dotted underline;
+        }
+
+        .blog-card .details ul li {
+            display: inline-block;
+        }
+
+        .blog-card .details .tags li {
+            margin-right: 2px;
+        }
+
+        .blog-card .details .tags li:first-child {
+            margin-left: -4px;
+        }
+
+        .blog-card .description {
+            padding: 1rem;
+            background: #fff;
+            position: relative;
+            z-index: 1;
+        }
+
+        .blog-card .description h1,
+        .blog-card .description h2 {
+            font-family: Poppins, sans-serif;
+        }
+
+        .blog-card .description h1 {
+            line-height: 1;
+            margin: 0;
+            font-size: 1.7rem;
+        }
+
+        .blog-card .description h2 {
+            font-size: 1rem;
+            font-weight: 300;
+            text-transform: uppercase;
+            color: #a2a2a2;
+            margin-top: 5px;
+        }
+
+        .blog-card .description .read-more {
+            text-align: right;
+        }
+
+        .blog-card .description .read-more a {
+            color: #5ad67d;
+            display: inline-block;
+            position: relative;
+        }
+
+      
+     
+        .blog-card p {
+            position: relative;
+            margin: 1rem 0 0;
+        }
+
+        .blog-card p:first-of-type {
+            margin-top: 1.25rem;
+            color: #000;
+        }
+
+        .blog-card:hover .details {
+            left: 0%;
+        }
+
+        @media (min-width: 640px) {
+            .blog-card {
+                flex-direction: row;
+                max-width: 700px;
+            }
+
+            .blog-card .meta {
+                flex-basis: 40%;
+                height: auto;
+            }
+
+            .blog-card .description {
+                flex-basis: 60%;
+            }
+
+            .blog-card .description:before {
+                transform: skewX(-3deg);
+                content: "";
+                background: #fff;
+                width: 30px;
+                position: absolute;
+                left: -10px;
+                top: 0;
+                bottom: 0;
+                z-index: -1;
+            }
+
+            .blog-card.alt {
+                flex-direction: row-reverse;
+            }
+
+            .blog-card.alt .description:before {
+                left: inherit;
+                right: -10px;
+                transform: skew(3deg);
+            }
+
+            .blog-card.alt .details {
+                padding-left: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <div class="container">
+            <a class="navbar-brand" href="./index.html" style="font-weight: bolder;color: inherit !important;"><span
+                    style="color: #08b427;">Mas</span> Bicycle</a>
+            <button class="" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"
+                style="border: none;outline: none;background: transparent;">
+                <img src="./content/menu.PNG" width="45" alt="bar">
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav" style="margin-left: auto;">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="./index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./aboutus.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./service.html">Service</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./product.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./gallery.html">Gallery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./contact.html">Contact</a>
+                    </li>
+                </ul>
+                <div class="cart" style="margin-left: auto;position: relative;">
+                    <i class="fal fa-shopping-cart" style="font-size: 25px;position: relative;"></i>
+                    <p
+                        style="background-color: #08b427;color: #fff;position: absolute;font-size: 10px;padding: 0 5px;border-radius: 50%;margin-top: -33px;margin-left: 15px;">
+                        3</p>
+                </div>
+                <div class="dark" id="dark-mode-toggle" style="font-size: 15px;font-weight: 600;">
+                    <i class="fas fa-adjust" style="font-size: 17px;"></i> Dark Mode
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!--  navbar -->
+
+    <section class="">
+        <!-- Start Page Title Area -->
+        <div class=" page-title-area">
+            <div class="d-table">
+                <div class="d-table-cell">
+                    <div class="container">
+                        <div class="page-title-content">
+                            <ul>
+                                <li><a href="index.html">Home</a></li>
+                                <li>About Us</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- section-about -->
+    <div class="section-about" style="margin-top: 70px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="img-content">
+                        <div class="content">
+                            <div class="main-content">
+                                <div class="content-img">
+                                    <div class="img">
+                                        <img src="./about/pexels-mídia-3642482.jpg" alt="contnet">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-1"></div>
+                <div class="col-lg-6">
+                    <div class="text-content">
+                        <div class="main-content">
+                            <div class="content">
+                                <div class="text">
+                                    <h5 style="color: #08b427;font-weight: 700;">About Us</h5>
+                                    <h1 style="font-weight: bolder;">Enjoy ride with a trip </h1>
+                                    <p>dolor sit amet consectetur adipisicing Culpa quod and<br> facere porro laboriosam
+                                        aperiam corrupti ullam destion <br> erunt magnam eiu. Dolore voluptatem modi
+                                        quibutoir <br> sdam labdolor voluptate neque explicabo corrupti and <br>
+                                        incidunt.</p>
+                                    <div class="link">
+                                        <a href="#"
+                                            style="text-decoration: none;color: #08b427;font-weight: 500;border: 2px solid #08b427;padding: 10px 25px">Read
+                                            More</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  section about -->
+
+
+    <section class="history" style="margin-top: 70px;">
+        <div class="container">
+            <div class="text-header">
+                <div class="main-content">
+                    <div class="content">
+                        <div class="contnet-main">
+                            <div class="main-conent">
+                                <div class="content-text">
+                                    <div class="text-content">
+                                        <div class="connet-text">
+                                            <div class="main-text">
+                                                <div class="text-left">
+                                                    <h2 style="font-weight: 600;color: #08b427;">Our History</h2>
+                                                    <!-- <h2 style="font-weight: bolder;">Special Bikes For You</h2> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- some about history -->
+
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <figure>
+                        <div class="media"
+                            style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_15.png)">
+                        </div>
+                        <figcaption>
+                            <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <mask id="mask" x="0" y="0" width="100%" height="100%">
+                                        <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
+                                        <text class="title" dx="50%" dy="2.5em">ENJOY</text>
+                                        <text class="title" dx="50%" dy="3.5em">EVERY</text>
+                                        <text class="title" dx="50%" dy="4.5em">MOMENT</text>
+                                    </mask>
+                                </defs>
+                                <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
+                            </svg>
+                            <div class="bodyhistory">
+                                <p>Enamel pin selvage health goth edison bulb, venmo glossier tattooed hella butcher
+                                    cred
+                                    iPhone.</p>
+                            </div>
+                        </figcaption><a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-lg-6 col-md-6 ">
+                    <figure>
+                        <div class="media"
+                            style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_5.png)">
+                        </div>
+                        <figcaption>
+                            <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <mask id="mask" x="0" y="0" width="100%" height="100%">
+                                        <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
+                                        <text class="title" dx="50%" dy="2.5em">ENJOY</text>
+                                        <text class="title" dx="50%" dy="3.5em">EVERY</text>
+                                        <text class="title" dx="50%" dy="4.5em">MOMENT</text>
+                                    </mask>
+                                </defs>
+                                <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
+                            </svg>
+                            <div class="bodyhistory">
+                                <p>Enamel pin selvage health goth edison bulb, venmo glossier tattooed hella butcher
+                                    cred
+                                    iPhone. Plaid skateboard man braid wayfarers.</p>
+                            </div>
+                        </figcaption><a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <figure>
+                        <div class="media"
+                            style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_15.png)">
+                        </div>
+                        <figcaption>
+                            <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <mask id="mask" x="0" y="0" width="100%" height="100%">
+                                        <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
+                                        <text class="title" dx="50%" dy="2.5em">ENJOY</text>
+                                        <text class="title" dx="50%" dy="3.5em">EVERY</text>
+                                        <text class="title" dx="50%" dy="4.5em">MOMENT</text>
+                                    </mask>
+                                </defs>
+                                <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
+                            </svg>
+                            <div class="bodyhistory">
+                                <p>Enamel pin selvage health goth edison bulb, venmo glossier tattooed hella butcher
+                                    cred
+                                    iPhone.</p>
+                            </div>
+                        </figcaption><a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-lg-6 col-md-6 ">
+                    <figure>
+                        <div class="media"
+                            style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_5.png)">
+                        </div>
+                        <figcaption>
+                            <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <mask id="mask" x="0" y="0" width="100%" height="100%">
+                                        <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
+                                        <text class="title" dx="50%" dy="2.5em">ENJOY</text>
+                                        <text class="title" dx="50%" dy="3.5em">EVERY</text>
+                                        <text class="title" dx="50%" dy="4.5em">MOMENT</text>
+                                    </mask>
+                                </defs>
+                                <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
+                            </svg>
+                            <div class="bodyhistory">
+                                <p>Enamel pin selvage health goth edison bulb, venmo glossier tattooed hella butcher
+                                    cred
+                                    iPhone. Plaid skateboard man braid wayfarers.</p>
+                            </div>
+                        </figcaption><a href="#"></a>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <!-- history -->
+    <section class="history" style="margin-top: 70px;">
+        <div class="container">
+            <div class="text-header">
+                <div class="main-content">
+                    <div class="content">
+                        <div class="contnet-main">
+                            <div class="main-conent">
+                                <div class="content-text">
+                                    <div class="text-content">
+                                        <div class="connet-text">
+                                            <div class="main-text">
+                                                <div class="text-left">
+                                                    <h2 style="font-weight: 600;color: #08b427;">Our Articles</h2>
+                                                    <!-- <h2 style="font-weight: bolder;">Special Bikes For You</h2> -->
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- some about there articles -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="blog-card">
+                        <div class="meta">
+                            <div class="photo"
+                                style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)">
+                            </div>
+                            <ul class="details">
+                                <li class="author"><a href="#">John Doe</a></li>
+                                <li class="date">Aug. 24, 2015</li>
+                                <li class="tags">
+                                    <ul>
+                                        <li><a href="#">Bicycle</a></li>
+                                        <li><a href="#">Health</a></li>
+                                        <li><a href="#">Exercise</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="description">
+                            <h1>The Joy of Cycling</h1>
+                            <h2>Why Bicycling is Great for Your Health and the Environment</h2>
+                            <p>Bicycling is not only a fun activity but also a great form of exercise. It promotes cardiovascular health, helps in weight management, and reduces stress. Moreover, it is an eco-friendly mode of transportation that reduces your carbon footprint.</p>
+                            <p class="read-more">
+                                <a href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-card alt">
+                        <div class="meta">
+                            <div class="photo"
+                                style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)">
+                            </div>
+                            <ul class="details">
+                                <li class="author"><a href="#">Jane Doe</a></li>
+                                <li class="date">July. 15, 2015</li>
+                                <li class="tags">
+                                    <ul>
+                                        <li><a href="#">Bicycle</a></li>
+                                        <li><a href="#">Health</a></li>
+                                        <li><a href="#">Exercise</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="description">
+                            <h1>The Joy of Cycling</h1>
+                            <h2>Why Bicycling is Great for Your Health and the Environment</h2>
+                            <p>Bicycling is not only a fun activity but also a great form of exercise. It promotes cardiovascular health, helps in weight management, and reduces stress. Moreover, it is an eco-friendly mode of transportation that reduces your carbon footprint.</p>
+                            <p class="read-more">
+                                <a href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-card ">
+                        <div class="meta">
+                            <div class="photo"
+                                style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)">
+                            </div>
+                            <ul class="details">
+                                <li class="author"><a href="#">John Doe</a></li>
+                                <li class="date">Aug. 24, 2015</li>
+                                <li class="tags">
+                                    <ul>
+                                        <li><a href="#">Bicycle</a></li>
+                                        <li><a href="#">Health</a></li>
+                                        <li><a href="#">Exercise</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="description">
+                            <h1>The Joy of Cycling</h1>
+                            <h2>Why Bicycling is Great for Your Health and the Environment</h2>
+                            <p>Bicycling is not only a fun activity but also a great form of exercise. It promotes
+                                cardiovascular health, helps in weight management, and reduces stress. Moreover, it is
+                                an eco-friendly mode of transportation that reduces your carbon footprint.</p>
+                            <p class="read-more">
+                                <a href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="blog-card alt">
+                        <div class="meta">
+                            <div class="photo"
+                                style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)">
+                            </div>
+                            <ul class="details">
+                                <li class="author"><a href="#">Jane Doe</a></li>
+                                <li class="date">July. 15, 2015</li>
+                                <li class="tags">
+                                    <ul>
+                                        <li><a href="#">Bicycle</a></li>
+                                        <li><a href="#">Health</a></li>
+                                        <li><a href="#">Exercise</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="description">
+                            <h1>The Joy of Cycling</h1>
+                            <h2>Why Bicycling is Great for Your Health and the Environment</h2>
+                            <p>Bicycling is not only a fun activity but also a great form of exercise. It promotes
+                                cardiovascular health, helps in weight management, and reduces stress. Moreover, it is
+                                an eco-friendly mode of transportation that reduces your carbon footprint.</p>
+                            <p class="read-more">
+                                <a href="#">Read More</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- section sponsor -->
+    <div class="section-sponsor" style="margin-top: 100px;">
+        <div class="container">
+            <div class="text-header">
+                <div class="main-header">
+                    <div class="text-content">
+                        <div class="content">
+                            <div class="text-contnet">
+                                <div class="contnet-text">
+                                    <div class="text-center">
+                                        <h1 style="font-weight: bolder;">Our Compay Trusted :</h1>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center" style="margin-top: 40px;">
+                <img src="./sponsor/1.png" alt="sponsor">
+                <img src="./sponsor/bukalapak-logodownload-38811.png" alt="sponsor">
+                <img src="./sponsor/netflix-logo-png-2562.png" alt="sponsor">
+                <img src="./sponsor/PikPng.com_cannondale-logo-png_3346025.png" alt="sponsor">
+                <img src="./sponsor/pngwing.com.png" alt="sponsor">
+                <img src="./sponsor/tokopedia-38850.png" alt="sponsor">
+                <img src="./sponsor/5e8ce592664eae000408546b.png" alt="sponsor">
+                <img src="./sponsor/ford.png" alt="sponsor">
+                <img src="./sponsor/gojek.png" alt="sponsor">
+                <img src="./sponsor/2.PNG" alt="sponsor">
+            </div>
+        </div>
+    </div>
+    <!--  section sponsor -->
+    <!-- footer -->
+    <footer style="margin-top: 150px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3">
+                    <a class="navbar-brand" href="#"
+                        style="font-weight: bolder;color: inherit !important;font-size: 26px;"><span
+                            style="color: #08b427;">Mas</span> Bicycle</a>
+                    <p style="font-size: 15px;padding: 15px 0;opacity: 0.8;">We is Company with experience over for 10
+                        Years and we can give your best bikes in the world with accesories.</p>
+                    <div class="medsos" style="font-size: 25px;margin: 10px 0  20px 0;">
+                        <i class="fab fa-facebook-f"
+                            style="margin-right: 10px;background-color: rgb(236, 236, 236);padding: 10px 15px;border-radius: 50%;"></i>
+                        <i class="fab fa-instagram"
+                            style="margin-right: 10px;background-color: rgb(236, 236, 236);padding: 10px 13px;border-radius: 50%;"></i>
+                        <i class="fab fa-twitter"
+                            style="margin-right: 10px;background-color: rgb(236, 236, 236);padding: 10px 11px;border-radius: 50%;"></i>
+                        <i class="fab fa-linkedin"
+                            style="margin-right: 10px;background-color: rgb(236, 236, 236);padding: 11px 13px;border-radius: 50%;"></i>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <h6>Company</h6>
+                    <ul>
+                        <li>
+                            <a href="./aboutus.html">About US</a>
+                        </li>
+                        <li>
+                            <a href="./product.html">Our Product</a>
+                        </li>
+                        <li>
+                            <a href="./service.html">Services</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html">Contact US</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6>shop</h6>
+                    <ul>
+                        <li>
+                            <a href="./product.html">Road Bikes</a>
+                        </li>
+                        <li>
+                            <a href="./product.html">Mountain Bikes</a>
+                        </li>
+                        <li>
+                            <a href="./product.html">Hybird Bikes</a>
+                        </li>
+                        <li>
+                            <a href="./product.html">Electronic Bikes</a>
+                        </li>
+                        <li>
+                            <a href="./product.html">Equipment</a>
+                        </li>
+                        <li>
+                            <a href="./product.html">Apparel</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6>Inside trek</h6>
+                    <ul>
+                        <li>
+                            <a href="#">Our Brands</a>
+                        </li>
+                        <li>
+                            <a href="#">Heritage</a>
+                        </li>
+                        <li>
+                            <a href="#">Tecknology</a>
+                        </li>
+                        <li>
+                            <a href="#">Racing</a>
+                        </li>
+                        <li>
+                            <a href="./product.html">Pricing</a>
+                        </li>
+                        <li>
+                            <a href="#">Walk at Trek</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="col-lg-2">
+                    <h6>SUpport</h6>
+                    <ul>
+                        <li>
+                            <a href="./contact.html">Customers Service</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html">Warrantly</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html">Bike Sizing & Fit</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html">Guides</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html">Manuals & User</a>
+                        </li>
+                        <li>
+                            <a href="./contact.html">Guides</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--  footer -->
+
+
+
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <script src="./index.js"></script>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
+    -->
+</body>
+
+</html>
