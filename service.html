@@ -19,77 +19,70 @@
 
     <title>Bicicle Store</title>
     <style>
-             .media {
-            background-position: center;
-            background-size: cover;
-            height: 100%;
-            position: absolute;
-            transition: all 0.3s ease;
-            width: 100%;
+        /* Default styles for web view */
+
+        #service1 .row,
+        #service .row {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
 
-        figure {
-            height: 370px;
-            overflow: hidden;
-            position: relative;
+        #service1 .col-md-6,
+        #service .col-md-6 {
+            flex: 1 1 45%;
+            margin: 10px;
+        }
+        
+
+        h2 {
+            color: #000000;
+            font-weight: 600;
         }
 
-        figure a {
-            height: 100%;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 100%;
-            z-index: 3;
+        @media (max-width: 768px) {
+
+            #service1 .col-md-6,
+            #service .col-md-6 {
+                flex: 1 1 100%;
+            }
         }
 
-        figure:hover .media {
-            transform: scale(1.25);
+        /* Hide #service1 on mobile view and show #service */
+        @media (max-width: 768px) {
+            #service {
+                display: none;
+            }
+
+            #service1 {
+                display: flex;
+            }
         }
 
-        figcaption {
-            color: #252830;
-            height: calc(100% - 30px);
-            margin: 15px;
-            left: 0;
-            position: absolute;
-            top: 0;
-            width: 250px;
+        /* Hide #service on web view and show #service1 */
+        @media (min-width: 769px) {
+            #service1 {
+                display: none;
+            }
+
+            #service {
+                display: flex;
+            }
         }
 
-        .bodyhistory {
-            background-color: white;
-            bottom: 0;
-            padding: 15px;
-            position: absolute;
-            width: 100%;
-        }
+        /* Default light mode styles */
+      
 
-        svg {
-            height: inherit;
-            width: 100%;
+        /* Dark mode styles */
+        .darkMode h2 {
+            color: #fff;
+            /* Light text color for dark mode */
         }
-
-        svg text {
-            text-anchor: middle;
-        }
-
-        svg #alpha {
-            fill: white;
-        }
-
-        svg .title {
-            font-size: 28px;
-            font-family: "Montserrat";
-            letter-spacing: 5px;
-        }
-
-        svg #base {
-            fill: white;
-            -webkit-mask: url(#mask);
-            mask: url(#mask);
-        }
-
+       .servicesimage{
+        aspect-ratio: 2;
+        object-fit: cover;
+        border-radius: 10px;
+       }
     </style>
 </head>
 
@@ -160,22 +153,17 @@
     </section>
 
 
-    <section class="history" style="margin-top: 70px;">
-        <div class="container">
-            <div class="text-header">
-                <div class="main-content">
-                    <div class="content">
-                        <div class="contnet-main">
-                            <div class="main-conent">
-                                <div class="content-text">
-                                    <div class="text-content">
-                                        <div class="connet-text">
-                                            <div class="main-text">
-                                                <div class="text-left">
-                                                    <h2 style="font-weight: 600;color: #08b427;text-align: center;">Our Services</h2>
-                                                    <!-- <h2 style="font-weight: bolder;">Special Bikes For You</h2> -->
-                                                </div>
-                                            </div>
+    <div class="container" style="margin-top: 60px;">
+        <div class="text-header">
+            <div class="man-content">
+                <div class="contnet">
+                    <div class="content-text">
+                        <div class="text-content">
+                            <div class="content-main">
+                                <div class="main-content">
+                                    <div class="content">
+                                        <div class="text-center">
+                                            <h2 style="color: #08b427; font-weight: bolder;">Our Services</h2>
                                         </div>
                                     </div>
                                 </div>
@@ -185,118 +173,236 @@
                 </div>
             </div>
         </div>
-        <!-- some about history -->
+        <div id="service1">
+            <div class=" row" style="display: flex; justify-content: center; align-items: center; margin-top: 50px;">
+                <!-- First row with image first -->
+                <div class="col-md-6">
+                    <img src="./images/services1.jpg" class="img-fluid rounded-top  servicesimage" alt="Service Image" />
+                </div>
+                <div class="col-md-6">
+                    <h2 style="color: #000000; font-weight: 600;">DOOR STEP SERVICE</h2>
+                    <p>
+                        FixMyCycle company offers doorstep bicycle services that provide customers with convenience and
+                        flexibility when it comes to maintaining their bikes. These services allow customers to schedule
+                        appointments at times that fit their busy schedules, eliminating the need to travel to a
+                        physical location or wait for a technician to arrive. The technicians come directly to the
+                        customer’s home or office, fully equipped with all the necessary tools and parts to repair or
+                        maintain the bicycle.
+                    </p>
+                </div>
 
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <figure>
-                        <div class="media"
-                            style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_15.png)">
-                        </div>
-                        <figcaption>
-                            <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <mask id="mask" x="0" y="0" width="100%" height="100%">
-                                        <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
-                                        <text class="title" dx="50%" dy="2.5em">ENJOY</text>
-                                        <text class="title" dx="50%" dy="3.5em">EVERY</text>
-                                        <text class="title" dx="50%" dy="4.5em">MOMENT</text>
-                                    </mask>
-                                </defs>
-                                <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
-                            </svg>
-                            <div class="bodyhistory">
-                                <p>Enamel pin selvage health goth edison bulb, venmo glossier tattooed hella butcher
-                                    cred
-                                    iPhone.</p>
-                            </div>
-                        </figcaption><a href="#"></a>
-                    </figure>
+                <!-- Second row with text first -->
+                <div class="col-md-6 ">
+                    <img src="./images/services2.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
                 </div>
-                <div class="col-lg-6 col-md-6 ">
-                    <figure>
-                        <div class="media"
-                            style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_5.png)">
-                        </div>
-                        <figcaption>
-                            <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <mask id="mask" x="0" y="0" width="100%" height="100%">
-                                        <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
-                                        <text class="title" dx="50%" dy="2.5em">ENJOY</text>
-                                        <text class="title" dx="50%" dy="3.5em">EVERY</text>
-                                        <text class="title" dx="50%" dy="4.5em">MOMENT</text>
-                                    </mask>
-                                </defs>
-                                <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
-                            </svg>
-                            <div class="bodyhistory">
-                                <p>Enamel pin selvage health goth edison bulb, venmo glossier tattooed hella butcher
-                                    cred
-                                    iPhone. Plaid skateboard man braid wayfarers.</p>
-                            </div>
-                        </figcaption><a href="#"></a>
-                    </figure>
+
+                <div class="col-md-6 ">
+                    <h2 style="color: #000000; font-weight: 600;">IN-STORE SERVICES</h2>
+                    <p>
+                        Prefer to bring your bike into our state-of-the-art facility? No problem! Our knowledgeable
+                        staff will treat your ride like royalty, utilizing only top-quality components and equipment to
+                        ensure a flawless finish every time.
+                    </p>
                 </div>
-                <div class="col-lg-6 col-md-6">
-                    <figure>
-                        <div class="media"
-                            style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_15.png)">
-                        </div>
-                        <figcaption>
-                            <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <mask id="mask" x="0" y="0" width="100%" height="100%">
-                                        <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
-                                        <text class="title" dx="50%" dy="2.5em">ENJOY</text>
-                                        <text class="title" dx="50%" dy="3.5em">EVERY</text>
-                                        <text class="title" dx="50%" dy="4.5em">MOMENT</text>
-                                    </mask>
-                                </defs>
-                                <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
-                            </svg>
-                            <div class="bodyhistory">
-                                <p>Enamel pin selvage health goth edison bulb, venmo glossier tattooed hella butcher
-                                    cred
-                                    iPhone.</p>
-                            </div>
-                        </figcaption><a href="#"></a>
-                    </figure>
+
+                <!-- Third row with image first -->
+                <div class="col-md-6">
+                    <img src="./images/services3.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
                 </div>
-                <div class="col-lg-6 col-md-6 ">
-                    <figure>
-                        <div class="media"
-                            style="background-image:url(https://s3-us-west-2.amazonaws.com/s.cdpn.io/584938/bg_5.png)">
-                        </div>
-                        <figcaption>
-                            <svg viewBox="0 0 200 200" version="1.1" preserveAspectRatio="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <defs>
-                                    <mask id="mask" x="0" y="0" width="100%" height="100%">
-                                        <rect id="alpha" x="0" y="0" width="100%" height="100%"></rect>
-                                        <text class="title" dx="50%" dy="2.5em">ENJOY</text>
-                                        <text class="title" dx="50%" dy="3.5em">EVERY</text>
-                                        <text class="title" dx="50%" dy="4.5em">MOMENT</text>
-                                    </mask>
-                                </defs>
-                                <rect id="base" x="0" y="0" width="100%" height="100%"></rect>
-                            </svg>
-                            <div class="bodyhistory">
-                                <p>Enamel pin selvage health goth edison bulb, venmo glossier tattooed hella butcher
-                                    cred
-                                    iPhone. Plaid skateboard man braid wayfarers.</p>
-                            </div>
-                        </figcaption><a href="#"></a>
-                    </figure>
+                <div class="col-md-6">
+                    <h2 style="color: #000000; font-weight: 600;">PICK UP AND DROP SERVICES</h2>
+                    <p>
+                        Hassle-free bike repairs at your convenience! Book online or via our website, and our friendly
+                        techs will collect your bike from any location before bringing it to our shop for expert care.
+                        We’ll then safely return your bike to its original spot – quick, easy, and flexible!
+                    </p>
+                </div>
+
+                <!-- Fourth row with text first -->
+                <div class="col-md-6 ">
+                    <img src="./images/services4.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
+                </div>
+                <div class="col-md-6 ">
+                    <h2 style="color: #000000; font-weight: 600;">APARTMENT SERVICE CAMPS</h2>
+                    <p>
+                        We offer assistance in repairing or maintaining your bicycle, our on-site maintenance team has
+                        got you covered! We offer comprehensive bicycle repair packages for apartment communities.
+                        Starting from basic tune-ups to full overhauls using high-quality parts. You can request an
+                        appointment via our website or contact us directly by phone or email.
+                    </p>
+                </div>
+
+                <!-- Fifth row with image first -->
+                <div class="col-md-6">
+                    <img src="./images/services5.jpg" class="img-fluid rounded-top servicesimage"
+                        alt="Service Image" />
+                </div>
+                <div class="col-md-6">
+                    <h2 style="color: #000000; font-weight: 600;">CORPORATE SERVICE CAMPS</h2>
+                    <p>
+                        We provide bicycle maintenance services specifically tailored for corporate companies that use
+                        bicycles as a mode of transportation within their campuses or facilities. This not only helps
+                        keep their employees healthy but also reduces carbon footprint and traffic congestion.
+                    </p>
+                </div>
+
+                <!-- Sixth row with text first -->
+                <div class="col-md-6 ">
+                    <img src="./images/services6.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
+                </div>
+                <div class="col-md-6 ">
+                    <h2 style="color: #000000; font-weight: 600;">EVENT SUPPORT</h2>
+                    <p>
+                        Fix my Cycle in partnership with local organizations, proudly supports various cycling events
+                        throughout the year. We understand that these events not only encourage physical activity but
+                        also foster community engagement and environmental awareness. As such, we strive to ensure every
+                        participant has an enjoyable experience during their ride. Prior to each event, we work closely
+                        with organizers to identify their needs and tailor our support accordingly. This includes
+                        supplying high-quality bikes, helmets, spare parts, tools, and repair kits, ensuring everything
+                        is in excellent condition for use on race day. We remain committed to providing exceptional
+                        support services that help make these events successful and memorable experiences for everyone
+                        involved!
+                    </p>
+                </div>
+
+                <!-- Seventh row with image first -->
+                <div class="col-md-6">
+                    <img src="./images/services7.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
+                </div>
+                <div class="col-md-6">
+                    <h2 style="color: #000000; font-weight: 600;">PRE-OWNED CYCLES</h2>
+                    <p>
+                        Discover effortless buying and selling of genuine pre-owned bikes with FMC Assured, FixMyCycle’s
+                        dedicated platform. Our expert-certified bicycles offer you unparalleled quality and confidence
+                        while making your transaction a breeze. We’ve taken the hassle out of purchasing second-hand
+                        bikes by providing transparent pricing, comprehensive inspection reports, and trusted
+                        warranties.
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+        <div id="service">
+            <div class=" row" style="display: flex; justify-content: center; align-items: center; margin-top: 50px;">
+                <!-- First row with image first -->
+                <div class="col-md-6">
+                    <img src="./images/services1.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
+                </div>
+                <div class="col-md-6">
+                    <h2 style="color: #000000; font-weight: 600;">DOOR STEP SERVICE</h2>
+                    <p>
+                        FixMyCycle company offers doorstep bicycle services that provide customers with convenience and
+                        flexibility when it comes to maintaining their bikes. These services allow customers to schedule
+                        appointments at times that fit their busy schedules, eliminating the need to travel to a
+                        physical location or wait for a technician to arrive. The technicians come directly to the
+                        customer’s home or office, fully equipped with all the necessary tools and parts to repair or
+                        maintain the bicycle.
+                    </p>
+                </div>
+
+                <!-- Second row with text first -->
+
+                <div class="col-md-6 ">
+                    <h2 style="color: #000000; font-weight: 600;">IN-STORE SERVICES</h2>
+                    <p>
+                        Prefer to bring your bike into our state-of-the-art facility? No problem! Our knowledgeable
+                        staff will treat your ride like royalty, utilizing only top-quality components and equipment to
+                        ensure a flawless finish every time.
+                    </p>
+                </div>
+                <div class="col-md-6 ">
+                    <img src="./images/services2.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
+                </div>
+
+                <!-- Third row with image first -->
+                <div class="col-md-6">
+                    <img src="./images/services3.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
+                </div>
+                <div class="col-md-6">
+                    <h2 style="color: #000000; font-weight: 600;">PICK UP AND DROP SERVICES</h2>
+                    <p>
+                        Hassle-free bike repairs at your convenience! Book online or via our website, and our friendly
+                        techs will collect your bike from any location before bringing it to our shop for expert care.
+                        We’ll then safely return your bike to its original spot – quick, easy, and flexible!
+                    </p>
+                </div>
+
+                <!-- Fourth row with text first -->
+
+                <div class="col-md-6 ">
+                    <h2 style="color: #000000; font-weight: 600;">APARTMENT SERVICE CAMPS</h2>
+                    <p>
+                        We offer assistance in repairing or maintaining your bicycle, our on-site maintenance team has
+                        got you covered! We offer comprehensive bicycle repair packages for apartment communities.
+                        Starting from basic tune-ups to full overhauls using high-quality parts. You can request an
+                        appointment via our website or contact us directly by phone or email.
+                    </p>
+                </div>
+                <div class="col-md-6 ">
+                    <img src="./images/services4.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
+                </div>
+                <!-- Fifth row with image first -->
+                <div class="col-md-6">
+                    <img src="./images/services5.jpg" class="img-fluid rounded-top servicesimage"
+                        style="aspect-ratio: 1.5; object-fit: cover;" alt="Service Image" />
+                </div>
+                <div class="col-md-6">
+                    <h2 style="color: #000000; font-weight: 600;">CORPORATE SERVICE CAMPS</h2>
+                    <p>
+                        We provide bicycle maintenance services specifically tailored for corporate companies that use
+                        bicycles as a mode of transportation within their campuses or facilities. This not only helps
+                        keep their employees healthy but also reduces carbon footprint and traffic congestion.
+                    </p>
+                </div>
+
+                <!-- Sixth row with text first -->
+
+                <div class="col-md-6 ">
+                    <h2 style="color: #000000; font-weight: 600;">EVENT SUPPORT</h2>
+                    <p>
+                        Fix my Cycle in partnership with local organizations, proudly supports various cycling events
+                        throughout the year. We understand that these events not only encourage physical activity but
+                        also foster community engagement and environmental awareness. As such, we strive to ensure every
+                        participant has an enjoyable experience during their ride. Prior to each event, we work closely
+                        with organizers to identify their needs and tailor our support accordingly. This includes
+                        supplying high-quality bikes, helmets, spare parts, tools, and repair kits, ensuring everything
+                        is in excellent condition for use on race day. We remain committed to providing exceptional
+                        support services that help make these events successful and memorable experiences for everyone
+                        involved!
+                    </p>
+                </div>
+                <div class="col-md-6 ">
+                    <img src="./images/services6.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
+                </div>
+                <!-- Seventh row with image first -->
+                <div class="col-md-6">
+                    <img src="./images/services7.jpg" class="img-fluid rounded-top servicesimage" alt="Service Image" />
+                </div>
+                <div class="col-md-6">
+                    <h2 style="color: #000000; font-weight: 600;">PRE-OWNED CYCLES</h2>
+                    <p>
+                        Discover effortless buying and selling of genuine pre-owned bikes with FMC Assured, FixMyCycle’s
+                        dedicated platform. Our expert-certified bicycles offer you unparalleled quality and confidence
+                        while making your transaction a breeze. We’ve taken the hassle out of purchasing second-hand
+                        bikes by providing transparent pricing, comprehensive inspection reports, and trusted
+                        warranties.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- section sponsor -->
     <div class="section-sponsor" style="margin-top: 100px;">
